@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+        
+        $("#btnGetAllData").click(function () {
+            console.log("Se hizo click!!");
+            tableau.connectionName = "NotCo Feed"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
+        });
+    });
+</script>
+<script src="~/Scripts/scriptTableau.js"></script>
+
+<br />
+<br />
+<input name="usuario" id="usuario" hidden value="notapi"/>
+<input name="password" id="password" hidden value="notc.5405" />
+<div class="row" style="text-align:center">
+    <button class="btn-success" id="btnGetAllData" type="submit">Get All Data!</button>
+</div>
+
